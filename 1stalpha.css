@@ -1,0 +1,45 @@
+html,body{
+    height:100%;
+    width:100%;
+    background-color:white;
+   /* background-image: url('white-bg.jpg'); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+header{
+    position:sticky;
+    top:0;
+    background:rgba(243, 244, 244, 0.902); 
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+}
+
+.left img{
+    width:35px;
+    height:35px;
+}
+.container{
+    padding:0 10vw;
+    margin:auto;
+
+}
+nav ul li{
+    list-style:none;
+    padding: 0 12px;
+
+}
+.search{
+    width:15vw; 
+    padding:7px 17px; 
+    border:0.5px solid grey;
+    background:#f7f8fd;
+    border-radius:5px;
+
+}
+.footer{
+    position:absolute;
+    bottom: 0;
+    left:0;
+    z-index:10;
+    
+}

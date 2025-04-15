@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Registration</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(15, 15, 83);
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:rgb(219, 214, 231);
+  }
+  .container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .error {
+    color: red;
+  }
+  .success {
+    color: green;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+  }
+  .new button{
+    background-color:white;
+    text-decoration:none;
+    color:black;
+    text-align: center;
+    border-radius: 12px;
+    padding:10px;
+    font-size: 15px;
+    width: 100px;
+  }
+  ul li{
+    list-style:none;
+    padding: 0 12px;
+
+}
+
+</style>
+</head>
+<body>
+  <ul>  
+    <li> 
+    <a href="1stalpha.html" class="new"><button><-- Home</button></a>
+  </li>
+  </ul>
+<div class="container">
+  <h2>Course Registration</h2>
+  <form id="registrationForm" action="#" method="post">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="nameError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span id="emailError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span id="passwordError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <span id="confirmPasswordError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="course">Course:</label>
+      <select id="course" name="course" required>
+        <option value="">Select Course</option>
+        <option value="AutoCAD">AutoCAD - Rs.4000</option>
+        <option value="CatiaV5">CatiaV5 - Rs.9000</option>
+        <option value="CreoParametric">Creo Parametric - Rs.9000</option>
+      </select>
+      <span id="courseError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="payment">Payment Option:</label>
+      <select id="payment" name="payment" required>
+        <option value="">Select Payment Option</option>
+        <option value="credit_card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="bank_transfer">Bank Transfer</option>
+      </select>
+      <span id="paymentError" class="error"></span>
+    </div>
+    <div class="form-group" id="amountInput" style="display: none;">
+      <label for="amount">Enter Amount:</label>
+      <input type="number" id="amount" name="amount">
+    </div>
+    <button type="button" onclick="validatePayment()">Submit</button>
+  </form>
+</div>
+
+<script>
+function validatePayment() {
+  var selectedCourse = document.getElementById("course").value;
+  var enteredAmount = parseInt(document.getElementById("amount").value);
+  var coursePrice;
+
+  switch (selectedCourse) {
+    case "AutoCAD":
+      coursePrice = 4000;
+      break;
+    case "CatiaV5":
+    case "CreoParametric":
+      coursePrice = 9000;
+      break;
+    default:
+      coursePrice = 0;
+  }
+
+  var paymentSuccessMessage = "Payment successful!";
+  var paymentErrorMessage = "Incorrect amount. Please enter the correct amount for the selected course.";
+
+  if (enteredAmount === coursePrice) {
+    document.getElementById("paymentError").textContent = "";
+    alert(paymentSuccessMessage);
+    displayRegistrationSuccess();
+  } else {
+    document.getElementById("paymentError").textContent = paymentErrorMessage;
+  }
+}
+
+function displayRegistrationSuccess() {
+  var courseName = document.getElementById("course").value;
+  var registrationSuccessMessage = "Registration successful! You have been enrolled in " + courseName + ".";
+  alert(registrationSuccessMessage);
+  document.getElementById("registrationForm").submit();
+}
+
+document.getElementById("payment").addEventListener("change", function() {
+  var paymentOption = this.value;
+  if (paymentOption !== "") {
+    document.getElementById("amountInput").style.display = "block";
+  } else {
+    document.getElementById("amountInput").style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

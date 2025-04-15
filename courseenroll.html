@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Registration</title>
+</head>
+<body>
+    <h1>Welcome to our Course Registration Page!</h1>
+    <p>Please select the course(s) you would like to enroll in:</p>
+    <ul>
+        <li>AutoCAD</li>
+        <li>CATIA</li>
+        <li>FEEL</li>
+    </ul>
+    <form action="/pricing" method="post">
+        <input type="hidden" name="courses" value="autocad,catia,feel" />
+        <input type="submit" value="Enroll" class="button" />
+    </form>
+    <div id="message" style="display:none;">
+        <p>You have been successfully enrolled in the selected course(s)!</p>
+    </div>
+</body>
+</html>
+
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('message').style.display = 'block';
+});
+</script>

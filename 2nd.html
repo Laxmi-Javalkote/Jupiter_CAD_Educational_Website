@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <style> 
+  body{
+    /* background-image: url(https://www.adorama.com/alc/wp-content/uploads/2021/05/bird-wings-flying.gif);*/
+     background-image: url(https://j.gifs.com/8qkKMl.gif);
+    background-repeat: no-repeat;
+     background-size: cover ;
+    /* background-repeat:repeat;
+     background-size: 50%;*/
+   }
+   .form-container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+form {
+width: 50%;
+}
+input[type=text] {
+width:max-content;
+padding: 10px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+background-color: rgb(71, 200, 112);
+}
+input[type=submit]
+{
+width:max-content;
+padding: 10px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+background-color:green;
+
+}
+</style>
+</body>
+<body>
+  <form action="/action_page.php">
+   
+  </form> 
+  <div class="form-container">
+    <form action="/action_page.php">
+      <!-- form content -->
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="First Name"><br>
+      <label for="sname">Middle Name:</label><br>
+      <input type="text" id="sname"name="sname" value="Middle Name"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Last Name"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>
