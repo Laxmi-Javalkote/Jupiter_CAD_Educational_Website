@@ -1,12 +1,8 @@
 services:
   - type: web
-    name: my-php-site
-    runtime: php
+    name: php-neon-app
     plan: free
-    buildCommand: ""
-    startCommand: "php -S 0.0.0.0:10000 -t ."
-
-    envVars:
+    env:
       - key: DATABASE_HOST
         value: ep-morning-king-a4zj91ou-pooler.us-east-1.aws.neon.tech
 
@@ -21,6 +17,9 @@ services:
 
       - key: DATABASE_PORT
         value: 5432
+
+    dockerfilePath: ./Dockerfile
+
 
 
 
