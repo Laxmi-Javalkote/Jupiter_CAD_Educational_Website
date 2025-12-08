@@ -1,8 +1,23 @@
 services:
   - type: web
-    name: my-php-app
-    env: debian
+    name: my-php-site
+    runtime: php
+    plan: free
     buildCommand: ""
     startCommand: "php -S 0.0.0.0:10000 -t ."
-    plan: free
-    autoDeploy: true
+    envVars:
+      DATABASE_HOST: ep-morning-king-a4zj91ou-pooler.us-east-1.aws.neon.tech
+      DATABASE_NAME: neondb
+      DATABASE_USER: neondb_owner
+      DATABASE_PASSWORD: npg_PT2jbzHiCn9t
+      DATABASE_PORT: 5432
+
+
+
+
+
+
+
+
+
+    
