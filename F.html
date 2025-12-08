@@ -105,9 +105,9 @@
       <label for="course">Course:</label>
       <select id="course" name="course" required>
         <option value="">Select Course</option>
-        <option value="AutoCAD">AutoCAD - Rs.4000</option>
-        <option value="CatiaV5">CatiaV5 - Rs.9000</option>
-        <option value="CreoParametric">Creo Parametric - Rs.9000</option>
+        <option value="AutoCAD">AutoCAD - Rs.4500</option>
+        <option value="CatiaV5">CatiaV5 - Rs.9999</option>
+        <option value="CreoParametric">Creo Parametric - Rs.9999</option>
       </select>
       <span id="courseError" class="error"></span>
     </div>
@@ -115,10 +115,10 @@
       <label for="payment">Payment Option:</label>
       <select id="payment" name="payment" required>
         <option value="">Select Payment Option</option>
-        <option value="credit_card">Credit Card</option>
-        <option value="paypal">PayPal</option>
+        <option value="phonepe">PhonePe</option>
+       <!-- <option value="paypal">PayPal</option>
         <option value="bank_transfer">Bank Transfer</option>
-      </select>
+      </select> -->
       <span id="paymentError" class="error"></span>
     </div>
     <div class="form-group" id="amountInput" style="display: none;">
@@ -137,11 +137,11 @@ function validatePayment() {
 
   switch (selectedCourse) {
     case "AutoCAD":
-      coursePrice = 4000;
+      coursePrice = 4500;
       break;
     case "CatiaV5":
     case "CreoParametric":
-      coursePrice = 9000;
+      coursePrice = 9999;
       break;
     default:
       coursePrice = 0;
@@ -178,4 +178,5 @@ document.getElementById("payment").addEventListener("change", function() {
 
 </body>
 </html>
+
 
