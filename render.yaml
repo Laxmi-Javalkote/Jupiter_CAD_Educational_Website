@@ -5,12 +5,23 @@ services:
     plan: free
     buildCommand: ""
     startCommand: "php -S 0.0.0.0:10000 -t ."
+
     envVars:
-      DATABASE_HOST: ep-morning-king-a4zj91ou-pooler.us-east-1.aws.neon.tech
-      DATABASE_NAME: neondb
-      DATABASE_USER: neondb_owner
-      DATABASE_PASSWORD: npg_PT2jbzHiCn9t
-      DATABASE_PORT: 5432
+      - key: DATABASE_HOST
+        value: ep-morning-king-a4zj91ou-pooler.us-east-1.aws.neon.tech
+
+      - key: DATABASE_NAME
+        value: neondb
+
+      - key: DATABASE_USER
+        value: neondb_owner
+
+      - key: DATABASE_PASSWORD
+        value: npg_PT2jbzHiCn9t
+
+      - key: DATABASE_PORT
+        value: 5432
+
 
 
 
